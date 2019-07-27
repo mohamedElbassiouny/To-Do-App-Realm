@@ -12,6 +12,7 @@
 		C75A0A8322EC8458006A5844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75A0A8122EC8458006A5844 /* Main.storyboard */; };
 		C75A0A8522EC845A006A5844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75A0A8422EC845A006A5844 /* Assets.xcassets */; };
 		C75A0A8822EC845A006A5844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75A0A8622EC845A006A5844 /* LaunchScreen.storyboard */; };
+		C75A0A9622ECDFF8006A5844 /* insertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A0A9522ECDFF7006A5844 /* insertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C75A0A8422EC845A006A5844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C75A0A8722EC845A006A5844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75A0A8922EC845A006A5844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C75A0A9522ECDFF7006A5844 /* insertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		C75A0A7C22EC8458006A5844 /* ToDoApp-Realm */ = {
 			isa = PBXGroup;
 			children = (
+				C75A0A9422ECDD8F006A5844 /* View */,
 				C75A0A7D22EC8458006A5844 /* AppDelegate.swift */,
 				C75A0A7F22EC8458006A5844 /* ViewController.swift */,
 				C75A0A8122EC8458006A5844 /* Main.storyboard */,
@@ -62,6 +65,15 @@
 				C75A0A8922EC845A006A5844 /* Info.plist */,
 			);
 			path = "ToDoApp-Realm";
+			sourceTree = "<group>";
+		};
+		C75A0A9422ECDD8F006A5844 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C75A0A9522ECDFF7006A5844 /* insertViewController.swift */,
+			);
+			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +149,7 @@
 			files = (
 				C75A0A8022EC8458006A5844 /* ViewController.swift in Sources */,
 				C75A0A7E22EC8458006A5844 /* AppDelegate.swift in Sources */,
+				C75A0A9622ECDFF8006A5844 /* insertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
