@@ -22,30 +22,30 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gxx-4g-MBp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="gxx-4g-MBp" customClass="ToDoTableViewCell" customModule="ToDoApp_Realm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gxx-4g-MBp" id="MBB-uX-ppG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-VL-zZZ">
-                                                    <rect key="frame" x="20" y="11" width="165.5" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-VL-zZZ">
+                                                    <rect key="frame" x="20" y="11" width="186.5" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-An-4tU">
-                                                    <rect key="frame" x="228.5" y="11" width="165.5" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="207.5" y="11" width="186.5" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yEh-An-4tU" firstAttribute="top" secondItem="MBB-uX-ppG" secondAttribute="topMargin" id="1AB-rP-fzF"/>
-                                                <constraint firstItem="hwC-VL-zZZ" firstAttribute="width" secondItem="MBB-uX-ppG" secondAttribute="width" multiplier="0.4" id="3nE-jh-s4R"/>
-                                                <constraint firstItem="yEh-An-4tU" firstAttribute="width" secondItem="MBB-uX-ppG" secondAttribute="width" multiplier="0.4" id="6xL-xs-KTM"/>
+                                                <constraint firstItem="hwC-VL-zZZ" firstAttribute="width" secondItem="MBB-uX-ppG" secondAttribute="width" multiplier="0.45" id="3nE-jh-s4R"/>
+                                                <constraint firstItem="yEh-An-4tU" firstAttribute="width" secondItem="MBB-uX-ppG" secondAttribute="width" multiplier="0.45" id="6xL-xs-KTM"/>
                                                 <constraint firstItem="yEh-An-4tU" firstAttribute="trailing" secondItem="MBB-uX-ppG" secondAttribute="trailingMargin" id="7sR-RM-KdV"/>
                                                 <constraint firstItem="yEh-An-4tU" firstAttribute="bottom" secondItem="MBB-uX-ppG" secondAttribute="bottomMargin" id="Ac6-ax-5uS"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hwC-VL-zZZ" secondAttribute="bottom" id="ddE-Tm-ekB"/>
@@ -53,8 +53,17 @@
                                                 <constraint firstItem="hwC-VL-zZZ" firstAttribute="leading" secondItem="MBB-uX-ppG" secondAttribute="leadingMargin" id="pw8-KU-CGK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="isDoneLabel" destination="yEh-An-4tU" id="Bt3-Ni-WFw"/>
+                                            <outlet property="toDoLabel" destination="hwC-VL-zZZ" id="Tcs-yH-2sm"/>
+                                            <segue destination="DTE-RR-g2T" kind="show" identifier="cellClick" id="Sw9-lF-P2p"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1UK-R4-LYX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gt2-TJ-AJ5"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,12 +82,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="toDoTableView" destination="a4z-xj-ZST" id="K0g-Sp-6pY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997.10144927536237" y="-435.26785714285711"/>
         </scene>
-        <!--Insert View Controller-->
+        <!--To-Do-->
         <scene sceneID="ihx-Ot-Fgn">
             <objects>
                 <viewController id="DTE-RR-g2T" customClass="insertViewController" customModule="ToDoApp_Realm" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,10 +127,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D6G-NO-6RJ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="To-Do" id="q9R-aX-HeK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aex-XE-Ji1">
+                            <connections>
+                                <action selector="saveButton:" destination="DTE-RR-g2T" id="Kes-hu-E62"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="switchButton" destination="VJn-G5-ibw" id="PcF-69-ypj"/>
+                        <outlet property="toDoTextField" destination="zb6-cp-t0H" id="SyV-k5-1Hf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmZ-di-faz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="-435"/>
+            <point key="canvasLocation" x="2158" y="-435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3bP-97-nLu">
@@ -139,4 +162,7 @@
             <point key="canvasLocation" x="246" y="-435"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sw9-lF-P2p"/>
+    </inferredMetricsTieBreakers>
 </document>
